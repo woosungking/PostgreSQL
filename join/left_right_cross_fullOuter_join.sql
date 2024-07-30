@@ -52,3 +52,27 @@ using(id)
 order by district_2020.id
 
 -- left 조인과 마찬가지지만 오른쪽 테이블의 데이터를 다 보여주고, 왼쪽테이블은 겹치는 데이터만 보여줌
+
+-- full outer join
+-- 일치 여부애 관계없이 두 테이블에 모든 행을 볼때 사용, 일반 조인과 대조되는 개념.
+
+select * from district_2020 full outer join district_2035
+using(id)
+order by district_2020.id
+
+select * from district_2035 full outer join district_2020
+using(id)
+order by district_2020.id
+
+-- cross join(두 테이블 사이 가능한 모든 행 조합을 나타냄)
+
+select * from district_2035 cross join district_2020
+--using(id) 이나 , on 절을 제공 할 필요없음.
+order by district_2020.id
+
+-- anti join
+
+select * from district_2020 left join district_2035
+using(id)
+where district_2035.id is null
+
