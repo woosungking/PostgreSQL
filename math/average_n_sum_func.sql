@@ -9,3 +9,5 @@ from us_counties_pop_est_2019
 
 select sum(pop_est_2019) as total_pop, round(avg(pop_est_2019),0) as avg_pop
 from us_counties_pop_est_2019
+
+
