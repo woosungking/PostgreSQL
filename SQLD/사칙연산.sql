@@ -41,3 +41,17 @@ select sum(col3) from tab3
 select sum(col4) from tab4
 
 select sum(col3 + col4) from tab3, tab4
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+insert into tab5 values
+('수학',1),('수학',2),('수학',3),('수학',4),('수학',5),('수학',6),
+('과학',10),('과학',20),('과학',30),('수학',40),('수학',50),('수학',60);
+
+select subject, sum(col5) from tab5
+group by subject;
+
+
+select null, sum(col5) from tab5 -- subject쪽 데이터가 전부 null로 변하고 그룹으로 지어져서 한번에 더하기가 실행됌, 컬럼명은 null?이렇게 변함.
+group by subject;
