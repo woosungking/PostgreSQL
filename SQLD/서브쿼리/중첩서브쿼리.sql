@@ -47,3 +47,16 @@ select E.name, E.birthday from entertainer E
 where birthday =(select MAX(E.birthday) from entertainer E)
 
 
+
+
+-- 단일 행 서브 쿼리
+
+	--생일이 가장 느린 연예인을 찾기(결과값이 1개) in, all 등 사용X 당연하겠지 ?
+	select E.name, E.birthday from entertainer E
+	where birthday =(select MAX(E.birthday) from entertainer E)
+
+-- 다중 행 서브 쿼리
+
+	-- 소속사가 존재하는 연예인 출력(물론 위 데이터셋에는 전부 소속이 되어있긴함.)
+	select E.name from entertainer E
+	where E.agency_code in (select agency_code from agency)
