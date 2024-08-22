@@ -33,3 +33,12 @@ select replace('아이즈원조유리','조','최') from tab2
 select replace('아이즈원조유리','원','메롱메롱') from tab2
 
 select replace('아이즈원조유리','조유리','') from tab2
+
+
+
+---
+
+-- 20만큼의 길이를 왼쪽부터 ilove라는 단어로 채우는데 넘어가면 중간에 끊김.
+select LPAD(COL1,20,'ILOVE') from tab2; 
+
+select RPAD(COL1,20,'ILOVE') from tab2;
